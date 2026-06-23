@@ -28,13 +28,12 @@ pipeline {
             }
         }
     }
-    
-    #post build
-    post {
+    }
+    post {  
          always{
             echo "pipeline executed"
          }
     }
 }
-}
+
 
