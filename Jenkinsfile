@@ -8,14 +8,28 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'This is build'
+                script {
+                    sh """
+                      echo "This is build"
+                    """
+                }
             }
+        }
         }
         stage('Test') {
             steps {
-                echo 'This is test'
+                script {
+                    sh """
+                       echo "This is test"
+                    """
             }
         }
+    }
+
+    post {
+         always{
+            echo "pipeline executed"
+         }
     }
 }
 
