@@ -8,8 +8,10 @@ pipeline {
      course="Jenkins"
     }
     options {
-          disableConcurrentBuilds()
+          disableConcurrentBuilds()  //we should not run parallel builds for this option
+          timeout(time: 5, unit: 'SECONDS') // Pipeline build process check
     }
+
     stages {
         stage('Build') {
             steps {
