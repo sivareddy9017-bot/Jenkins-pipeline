@@ -4,13 +4,16 @@ pipeline {
           label 'Java'
         }
     }
-
+    environment 
+     course=Jenkins
+    
     stages {
         stage('Build') {
             steps {
                 script {
                     sh """
                       echo "This is build"
+                      echo $course
                     """
                 }
             }
@@ -26,7 +29,7 @@ pipeline {
         }
     }
     } 
-
+    # post build
     post {
          always{
             echo "pipeline executed"
