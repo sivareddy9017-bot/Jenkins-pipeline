@@ -4,9 +4,9 @@ pipeline {
           label 'Java'
         }
     }
-    environment 
-     course=Jenkins
-    
+    environment {
+     course="Jenkins"
+    }
     stages {
         stage('Build') {
             steps {
@@ -29,6 +29,7 @@ pipeline {
         }
     }
     }
+    #post build
     post {  
          always{
             echo "pipeline executed"
