@@ -1,0 +1,21 @@
+pipeline{
+    ageny any
+    stages{
+        stage('Build'){
+            steps{
+                echo "This is Build"
+            }
+        }
+        stage('Test'){
+            steps{
+                echo "This is Build"
+            }
+        }
+        stage('Deploy'){
+            steps{
+                echo "This is Build"
+            }
+        }
+    
+    }
+}
