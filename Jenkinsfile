@@ -1,9 +1,9 @@
-pipeline {
+Pipeline {
     agent {
-        node{
+        node {
           label 'Roboshop'
+        }
     }
-
 
     stages {
         stage('Build') {
@@ -18,4 +18,4 @@ pipeline {
         }
     }
 }
-}
+
