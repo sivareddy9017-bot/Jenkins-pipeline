@@ -29,7 +29,7 @@ pipeline {
         }
     }
     }
-    #post build
+    //post build
     post {  
          always{
             echo "pipeline executed"
