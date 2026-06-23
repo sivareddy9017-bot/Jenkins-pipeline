@@ -17,6 +17,7 @@ pipeline {
                     sh """
                       echo "This is build"
                       echo $course
+                      sleep 5
                     """
                 }
             }
