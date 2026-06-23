@@ -15,7 +15,7 @@ pipeline {
                 }
             }
         }
-    }
+    
         stage('Test') {
             steps {
                 script {
@@ -25,6 +25,7 @@ pipeline {
             }
         }
     }
+    } 
 
     post {
          always{
