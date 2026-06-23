@@ -36,13 +36,13 @@ pipeline {
             steps {
                 script {
                     sh """
-                       echo "This is test"
+                       echo "This is test-"
                         echo "Testing"
                         echo "Hello ${params.PERSON}"
                         echo "Biography: ${params.BIOGRAPHY}"
                         echo "Toggle: ${params.TOGGLE}"
                         echo "Choice: ${params.DEPLOY}" 
-                        echo "Password: ${params.PASSWORD}"
+                        echo "Password: ${params.PASSWORD}" 
                     """
             }
         }
