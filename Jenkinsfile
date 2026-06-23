@@ -9,7 +9,14 @@ pipeline {
     }
     options {
           disableConcurrentBuilds()  //we should not run parallel builds for this option
-          timeout(time: 5, unit: 'SECONDS') // Pipeline build process check
+          timeout(time: 5, unit: 'MINUTES') // Pipeline build process check
+    }
+    parameters {
+        string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+        text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
+        booleanParam(name: 'DEPLOY', defaultValue: false, description: 'Toggle this value')
+        choice(name: 'CHOICE', choices: ['One', 'Two', 'Three'], description: 'Pick something')
+        password(name: 'PASSWORD', defaultValue: 'SECRET', description: 'Enter a password')
     }
 
     stages {
@@ -30,10 +37,17 @@ pipeline {
                 script {
                     sh """
                        echo "This is test"
+                        echo "Testing"
+                        echo "Hello ${params.PERSON}"
+                        echo "Biography: ${params.BIOGRAPHY}"
+                        echo "Toggle: ${params.TOGGLE}"
+                        echo "Choice: ${params.DEPLOY}" 
+                        echo "Password: ${params.PASSWORD}"
                     """
             }
         }
     }
+    
     }
     //post build
     post {  
