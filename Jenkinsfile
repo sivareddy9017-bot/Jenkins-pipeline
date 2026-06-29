@@ -36,7 +36,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                       echo "This is test-"
+                       echo "This is test-123"
                         echo "Testing"
                         echo "Hello ${params.PERSON}"
                         echo "Biography: ${params.BIOGRAPHY}"
